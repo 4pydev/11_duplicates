@@ -1,7 +1,25 @@
 # Anti-Duplicator
 
-[TODO. There will be project description]
+Скрипт принимает на вход папку, просматривает все файлы в ней (а также во всех подпапках и под-под-...папках) и сообщает, если находит дубликаты. Дубликаты – это два файла с одинаковым именем и размером.
 
-# Project Goals
+# Запуск и пример вывода
 
-The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
+Требуется установленный Python 3.5.
+
+```bash
+$ python3 duplicates.py <path-to-testing_directory>
+
+# Пример вывода
+File 1.txt was founded in next directories:
+        /home/.../test/2/3
+        /home/.../test/2
+        /home/.../test/1
+        /home/.../test/
+
+...
+
+```
+
+# Цели проекта
+
+Данный код создан в образовательных целях. Обучающий курс для веб-разработчиков - [DEVMAN.org](https://devman.org)
