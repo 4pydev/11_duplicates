@@ -52,8 +52,8 @@ if __name__ == '__main__':
         File = namedtuple('File', 'directory name')
         for current_file in get_current_file(init_dir):
             for test_file in get_test_file(init_dir):
-                if is_files_equal(current_file, test_file):
-                    add_to_matches(current_file, test_file, founded_matches)
+                add_to_matches(current_file, test_file, founded_matches) \
+                    if is_files_equal(current_file, test_file) else False
         print_matches(founded_matches)
     except IndexError:
         print("Such directory doesn't exist.")
