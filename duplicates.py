@@ -48,16 +48,12 @@ def print_matches(matches_dict):
 if __name__ == '__main__':
     try:
         init_dir = sys.argv[1]
-
         founded_matches = {}
         File = namedtuple('File', 'directory name')
-
         for current_file in get_current_file(init_dir):
             for test_file in get_test_file(init_dir):
                 if is_files_equal(current_file, test_file):
                     add_to_matches(current_file, test_file, founded_matches)
-
         print_matches(founded_matches)
-
     except IndexError:
         print("Such directory doesn't exist.")
