@@ -13,8 +13,8 @@ def get_current_file(path):
 def is_files_equal(file1, file2):
     if file1.directory != file2.directory and \
        file1.name == file2.name and \
-        os.path.getsize("{}/{}".format(file1.directory, file1.name)) == \
-            os.path.getsize("{}/{}".format(file2.directory, file2.name)):
+        os.path.getsize(os.path.join(file1.directory, file1.name)) == \
+            os.path.getsize(os.path.join(file2.directory, file2.name)):
         return True
     return False
 
