@@ -10,13 +10,6 @@ def get_current_file(path):
             yield current_file
 
 
-def get_test_file(path):
-    for root, directories, files in os.walk(path):
-        for test_filename in files:
-            test_file = File(root, test_filename)
-            yield test_file
-
-
 def is_files_equal(file1, file2):
     if file1.directory != file2.directory and \
        file1.name == file2.name and \
@@ -51,7 +44,7 @@ if __name__ == '__main__':
         founded_matches = {}
         File = namedtuple('File', 'directory name')
         for current_file in get_current_file(init_dir):
-            for test_file in get_test_file(init_dir):
+            for test_file in get_current_file(init_dir):
                 add_to_matches(current_file, test_file, founded_matches) \
                     if is_files_equal(current_file, test_file) else False
         print_matches(founded_matches)
